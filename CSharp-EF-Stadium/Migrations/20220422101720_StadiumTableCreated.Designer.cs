@@ -9,8 +9,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CSharp_EF_Stadium.Migrations
 {
     [DbContext(typeof(StadiumDbContext))]
-    [Migration("20220422032023_StadionsTableRenameToStadium")]
-    partial class StadionsTableRenameToStadium
+    [Migration("20220422101720_StadiumTableCreated")]
+    partial class StadiumTableCreated
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

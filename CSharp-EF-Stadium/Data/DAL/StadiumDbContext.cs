@@ -9,11 +9,11 @@ namespace CSharp_EF_Stadium.Data.DAL
     internal class StadiumDbContext:DbContext
     {
         public DbSet<Stadium> Stadium { get; set; }
-
-
+        public DbSet<Users> Users { get; set; }
+        public DbSet<Reservations> Reservations { get; set; }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(@"Server=DESKTOP-PGOASLP\SQLEXPRESS;Database=StadiumEF;Trusted_Connection=TRUE");
+            optionsBuilder.UseSqlServer(@"Server=DESKTOP-1TG370G;Database=StadiumEF;Trusted_Connection=TRUE");
         }
     }
 }

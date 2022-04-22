@@ -2,30 +2,29 @@
 
 namespace CSharp_EF_Stadium.Migrations
 {
-    public partial class StadionsTableCreated : Migration
+    public partial class UsersTable : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "Stadions",
+                name: "Users",
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Name = table.Column<string>(nullable: true),
-                    HourPrice = table.Column<double>(nullable: false),
-                    Capacity = table.Column<int>(nullable: false)
+                    FullName = table.Column<string>(nullable: true),
+                    Email = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Stadions", x => x.Id);
+                    table.PrimaryKey("PK_Users", x => x.Id);
                 });
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "Stadions");
+                name: "Users");
         }
     }
 }

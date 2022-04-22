@@ -4,14 +4,16 @@ using CSharp_EF_Stadium.Data.DAL;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace CSharp_EF_Stadium.Migrations
 {
     [DbContext(typeof(StadiumDbContext))]
-    partial class StadiumDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220422114856_ReservationsTableAdded")]
+    partial class ReservationsTableAdded
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

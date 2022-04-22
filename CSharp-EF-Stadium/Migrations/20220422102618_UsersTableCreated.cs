@@ -2,7 +2,7 @@
 
 namespace CSharp_EF_Stadium.Migrations
 {
-    public partial class StadionsTableChangedToStadium : Migration
+    public partial class UsersTableCreated : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

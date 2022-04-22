@@ -9,8 +9,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CSharp_EF_Stadium.Migrations
 {
     [DbContext(typeof(StadiumDbContext))]
-    [Migration("20220422023217_StadionsTableChangedToStadium")]
-    partial class StadionsTableChangedToStadium
+    [Migration("20220422111117_ReservationsTable")]
+    partial class ReservationsTable
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -20,7 +20,7 @@ namespace CSharp_EF_Stadium.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("CSharp_EF_Stadium.Data.Entities.Stadions", b =>
+            modelBuilder.Entity("CSharp_EF_Stadium.Data.Entities.Stadium", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -38,7 +38,25 @@ namespace CSharp_EF_Stadium.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Stadions");
+                    b.ToTable("Stadium");
+                });
+
+            modelBuilder.Entity("CSharp_EF_Stadium.Data.Entities.Users", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Email")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("FullName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Users");
                 });
 #pragma warning restore 612, 618
         }
